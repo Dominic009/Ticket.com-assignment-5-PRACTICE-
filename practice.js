@@ -50,6 +50,25 @@ for (const select of selected){
         li.appendChild(p2);        
         li.appendChild(p3);                         // When user selects a seat, it will append in different "p."
         selectedContainer.appendChild(li);
+
+
+
+        const id = document.getElementById('Available-seats');
+        let availableSeats = getText('Available-seats');
+        availableSeats--;
+
+        id.innerText = availableSeats;
+
+        
+        if(countOfSeats < 4){
+            seat.style.backgroundColor = '#1DD100';
+            countOfSeats++;
+            totalSeats.innerText = countOfSeats;
+            getQuery(seat, 'p');
+        }
+        else{
+          return seat.removeEventListener('click', selectSeat);
+        }
     })
 }
 
@@ -59,7 +78,26 @@ setInnerText('grand-total', 0)
 
 
 
+const inputNumber = document.getElementById('phone-number');
+const button = document.getElementById('next-button');
 
+function validateNumber(number){
+    let phoneRegex = /^\d{11}$/;
+   return phoneRegex.test(number)
+
+}
+
+    inputNumber.addEventListener('input', function(){
+        let phoneNumber = inputNumber.value;
+        const isValidNumber = validateNumber(phoneNumber);
+
+        if(isValidNumber){
+            button.removeAttribute('disabled');
+        }else{
+            button.setAttribute('disabled', 'disabled');
+        }
+
+    })
 
 
 // Component Functions
