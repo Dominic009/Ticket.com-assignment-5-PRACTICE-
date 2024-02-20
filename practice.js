@@ -83,3 +83,66 @@ function getTextNumber(elementid){
 function setInnerText(id, value){
     document.getElementById(id).innerText = value;
 }
+
+
+
+
+
+
+
+
+// const coupons = ['NEW15', 'COUPLE20'];
+
+// function getDiscount(){
+//     const userInput = document.getElementById('input-coupon').value;
+
+// function isValidCoupon(userInput){
+//     return coupons.includes(userInput)
+// }
+
+// if(isValidCoupon(userInput)){
+//     console.log("valid coupon")
+// }else{
+//     console.log('Not valid')
+//  }
+// }
+
+// getDiscount()
+
+// const button = document.getElementById('button');
+// button.addEventListener('click', function(e){
+//     console.log(e)
+// })
+
+const coupons = ['NEW15', 'COUPLE20'];
+
+function isValidCoupon(userInput) {
+    return coupons.includes(userInput);
+}
+
+document.getElementById('apply-btn').addEventListener('click', function() {
+    const userInput = document.getElementById('input-coupon').value.toUpperCase();
+    const messageElement = document.getElementById('message');
+
+    const total = document.getElementById('total-price').innerText;
+    const totalPrice = parseInt(total);
+
+    const amount = document.getElementById("discount-amount");
+    const discountedAmount = totalPrice * 15 / 100;
+    amount.innerText = discountedAmount;
+
+    const gTotal = document.getElementById('grand-total').innerText;
+    const converted = parseInt(gTotal);
+    const grandTotal = converted - discountedAmount;
+    gTotal.innerText = grandTotal;
+    setInnerText('grand-total', grandTotal)
+    if (isValidCoupon(userInput)) {
+        messageElement.textContent = "Discount";
+        messageElement.style.color = "green";
+        document.getElementById('input-coupon').classList.add('hidden');
+        document.getElementById('apply-btn').classList.add('hidden');
+    } else {
+        messageElement.textContent = "Invalid coupon";
+        messageElement.style.color = "red";
+    }
+});
