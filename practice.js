@@ -80,7 +80,7 @@ setInnerText('total-price', 0);
 setInnerText('grand-total', 0)
 
 
-
+ 
 const inputNumber = document.getElementById('phone-number');
 const button = document.getElementById('next-button');
 
@@ -126,34 +126,6 @@ function setInnerText(id, value){
 }
 
 
-
-
-
-
-
-
-// const coupons = ['NEW15', 'COUPLE20'];
-
-// function getDiscount(){
-//     const userInput = document.getElementById('input-coupon').value;
-
-// function isValidCoupon(userInput){
-//     return coupons.includes(userInput)
-// }
-
-// if(isValidCoupon(userInput)){
-//     console.log("valid coupon")
-// }else{
-//     console.log('Not valid')
-//  }
-// }
-
-// getDiscount()
-
-// const button = document.getElementById('button');
-// button.addEventListener('click', function(e){
-//     console.log(e)
-// })
 
 const coupons = ['NEW15', 'COUPLE20'];
 
