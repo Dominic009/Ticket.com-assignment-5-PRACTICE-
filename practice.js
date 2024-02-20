@@ -5,11 +5,14 @@
 const selected = document.getElementsByClassName('selected');
 let count = 0;
 
+const seats = document.querySelectorAll('.selected');
+const totalSeats = document.getElementById('total-seats');
+
 for (const select of selected){
     select.addEventListener('click', function(e){
         count = count + 1;
         
-        
+        let countOfSeats = parseInt(totalSeats.innerText) || 0;
         setInnerText('total-seats', count);
         getTextNumber('Available-seats');
 
