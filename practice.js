@@ -21,10 +21,10 @@ for (const select of selected){
 
         const li = document.createElement('li');
         li.style.listStyle = 'none';
-        li.style.width = '390px';
+        li.style.width = '400px';
         li.style.display = 'flex';
-        li.style.gap = '115px';
-        li.style.justifyContent = 'space-evenly';
+        li.style.justifyContent = 'space-between';
+        // li.style.border = '2px solid black';
 
         const p = document.createElement('p');
         p.innerText = text;
