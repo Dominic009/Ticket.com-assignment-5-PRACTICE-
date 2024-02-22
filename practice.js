@@ -61,17 +61,6 @@ for (const select of selected){
         availableSeats--;
 
         id.innerText = availableSeats;
-
-        
-        if(countOfSeats < 4){
-            seat.style.backgroundColor = '#1DD100';
-            countOfSeats++;
-            totalSeats.innerText = countOfSeats;
-            getQuery(seat, 'p');
-        }
-        else{
-          return seat.removeEventListener('click', selectSeat);
-        }
     })
 }
 
@@ -99,7 +88,6 @@ function validateNumber(number){
         }else{
             button.setAttribute('disabled', 'disabled');
         }
-
     })
 
 
