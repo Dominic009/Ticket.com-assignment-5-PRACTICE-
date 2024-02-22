@@ -29,9 +29,21 @@ for(const seat of seatsSelected){
         console.log(container)
 
         // Create HTML elements to push the datas
-        const div = document.createElement(div);
+        // const div = document.createElement('div');
 
+        const p = document.createElement('p');
+        p.innerText = targetButton;
+        const p2 = document.createElement('p');
+        p2.textContent = "Economy";
+        const p3 = document.createElement('p');
+        p3.textContent = "550";
 
+        // container.appendChild(div);
+        container.appendChild(p)
+        container.appendChild(p2)
+        container.appendChild(p3)
     })
   }
 }
+
+clickedSeat()
