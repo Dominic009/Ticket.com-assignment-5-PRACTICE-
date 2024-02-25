@@ -50,6 +50,9 @@
             scale: 110%;
             box-shadow: 1px 2px 5px grey;
         }
+        .border{
+            border: solid 2px red;
+        }
     </style>
 
     <link rel="stylesheet" href="style.css">
@@ -141,18 +144,18 @@
             <h1 class="heading text-center text-[30px]">Best offers for you!</h1>
 
             <!-- Discount coupons -->
-            <div class="grid grid-cols-2 gap-6 mt-[30px]">
+            <div class="grid grid-cols-2 gap-6 mt-[30px] px-6 h-[250px]">
             
             <!-- Coupon 1 -->
             <div>
-                <div class="bg-[#FFBF0F] h-[210px] flex items-center justify-end rounded-3xl">
-                    <div class="flex flex-col mr-[80px] scale-110">
+                <div class="bg-[#FFBF0F] h-[210px] flex items-center justify-end rounded-3xl h-full">
+                    <div class="flex flex-col mr-[80px] scale-[140%] w-[40%] items-center">
                         <h1 class="inter heading text-gray-900 font-extrabold">15% OFF</h1>
                         <p class="inter text-gray-700 font-bold">on your next purchase</p>
                         <p class="inter text-gray-500 text-xs">use by March 2024</p>
                     </div>
-                    <div><img src="./images/cupon-devider.png" alt=""></div>
-                    <div class=" w-[30%] flex flex-col items-center ">
+                    <div><img src="./images/cupon-devider.png" class="scale-[115%]"></div>
+                    <div class=" w-[30%] flex flex-col items-center scale-[140%]">
                         <h1 class="heading text-xl text-gray-900 font-extrabold">NEW15</h1>
                         <p class="text-gray-500 text-sm">Coupon Code</p>
                     </div>
@@ -161,14 +164,14 @@
 
             <!-- Coupon 2 -->
             <div>
-                <div class="bg-[#F78C9C] h-[210px] flex items-center justify-end rounded-3xl">
-                    <div class="flex flex-col mr-[80px] scale-110">
+                <div class="bg-[#F78C9C] h-[210px] flex items-center justify-end rounded-3xl h-full ">
+                    <div class="flex flex-col mr-[80px] scale-[140%] w-[40%] items-center">
                         <h1 class="inter heading text-gray-900 font-extrabold">20% OFF</h1>
                         <p class="inter text-gray-700 font-bold">on your next purchase</p>
                         <p class="inter text-gray-500 text-xs">use by March 2024</p>
                     </div>
-                    <div><img src="./images/cupon-devider.png" alt=""></div>
-                    <div class=" w-[30%] flex flex-col items-center ">
+                    <div><img src="./images/cupon-devider.png" class="scale-[115%]"></div>
+                    <div class=" w-[30%] flex flex-col items-center scale-[140%]">
                         <h1 class="heading text-xl text-gray-900 font-extrabold">COUPLE20</h1>
                         <p class="text-gray-500 text-sm">Coupon Code</p>
                     </div>
@@ -193,7 +196,7 @@
             </div>
 
             <!-- Ticket -->
-            <div class="bg-white px-5 flex items-center w-[90%] mx-auto rounded-3xl">
+            <div class="bg-white px-5 flex justify-evenly items-center w-[80%] mx-auto rounded-3xl">
 
                 <!-- Left side -->
                 <div>
@@ -242,7 +245,7 @@
                 </div>
 
                 <!-- Right side -->
-                <div class="text-center flex flex-col items-center justify-center scale-110 ml-[50px]">
+                <div class="text-center flex flex-col items-center justify-center scale-110">
                     <img src="./images/fare.png">
                     <h1 class="heading">550 taka</h1>
                     <p class="font-bold text-gray-600">Per seat</p>

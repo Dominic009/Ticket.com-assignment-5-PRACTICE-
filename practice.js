@@ -131,7 +131,7 @@ function isValidCoupon(userInput) {
     return coupons.includes(userInput);
 }
 
-document.getElementById('apply-btn').addEventListener('click', function() {
+document.getElementById('apply-btn').addEventListener('click', function(){
     const userInput = document.getElementById('input-coupon').value.toUpperCase();
     const messageElement = document.getElementById('message');
 
