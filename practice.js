@@ -8,11 +8,19 @@ let count = 0;
 const seats = document.querySelectorAll('.selected');
 const totalSeats = document.getElementById('total-seats');
 
+
 for (const select of selected){
     select.addEventListener('click', function(e){
         count = count + 1;
-        
+
         let countOfSeats = parseInt(totalSeats.innerText) || 0;
+
+        if(countOfSeats < 6){
+            select.style.backgroundColor = '#1DD100';
+        }else if(countOfSeats === 6){
+            select.removeEventListener('click', clickHandler);
+        }
+
         setInnerText('total-seats', count);
         getTextNumber('Available-seats');
 
@@ -22,38 +30,41 @@ for (const select of selected){
         const text = e.target.parentNode.childNodes[1].innerText;  // More effective and accurate
         const selectedContainer = document.getElementById('seat-number-container');
 
+
         const li = document.createElement('li');
         li.style.listStyle = 'none';
-        li.style.width = '400px';
+        li.style.width = '100%';
         li.style.display = 'flex';
         li.style.justifyContent = 'space-between';
         // li.style.border = '2px solid black';
-
+        
         const p = document.createElement('p');
         p.innerText = text;
-
+        
         const p2 = document.createElement('p');
         p2.innerText = "Economy";
         
-        //calculating total price
+        // Calculating total price
+        const price = 550; // Example price, replace with your logic to get the price
         const p3 = document.createElement('p');
-        p3.innerText = 550;
-        let convert = parseInt(p3.innerText);
-
-        if(typeof convert === 'number'){
-           const total = document.getElementById('total-price').innerText;
-           const number = parseInt(total);
-           convert = number + convert;
-        }
-        setInnerText('total-price', convert)
-        setInnerText('grand-total', convert)
+        p3.innerText = price;
         
-
+        // Get the total price element
+        const totalPriceElement = document.getElementById('total-price');
+        let totalPrice = parseInt(totalPriceElement.innerText) || 0;
+        
+        // Update total price
+        totalPrice += price;
+        totalPriceElement.innerText = totalPrice;
+        
+        // Update grand total
+        document.getElementById('grand-total').innerText = totalPrice;
+        
         li.appendChild(p);         
         li.appendChild(p2);        
-        li.appendChild(p3);                         // When user selects a seat, it will append in different "p."
+        li.appendChild(p3);                         // When the user selects a seat, it will append in different "p."
         selectedContainer.appendChild(li);
-
+        
 
 
         const id = document.getElementById('Available-seats');
@@ -67,7 +78,6 @@ for (const select of selected){
 setInnerText('total-seats', 0); // Setting a dynamic text to display outside the functions
 setInnerText('total-price', 0);
 setInnerText('grand-total', 0)
-
 
  
 const inputNumber = document.getElementById('phone-number');
@@ -147,3 +157,5 @@ document.getElementById('apply-btn').addEventListener('click', function() {
         messageElement.style.color = "red";
     }
 });
+
+
